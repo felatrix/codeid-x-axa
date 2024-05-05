@@ -1,5 +1,6 @@
 import { ColumnDef } from '@tanstack/react-table';
 import { AlbumInterface } from '@/types/api/album';
+import AlbumDetail from '../detail album/album-detail';
 
 export const columns: ColumnDef<AlbumInterface>[] = [
   {
@@ -13,5 +14,9 @@ export const columns: ColumnDef<AlbumInterface>[] = [
   {
     accessorKey: 'title',
     header: 'Title',
+  },
+  {
+    id: 'actions',
+    cell: ({ row }) => <AlbumDetail albumDetailData={row.original} />,
   },
 ];

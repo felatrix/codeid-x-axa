@@ -11,7 +11,8 @@ function Albums() {
   const [loading, setLoading] = useState<boolean>(false);
   const location = useLocation()
   const userId = location.pathname.split("/")[2]
-  
+  const queryParameters = new URLSearchParams(window.location.search)
+  const userName = queryParameters.get("userName")
   const fetchUsers = async () => {
     try {
       setLoading(true);
@@ -37,7 +38,7 @@ function Albums() {
   return (
     <>
       <div className="container">
-        <p className="text-2xl mb-2 font-bold">Albums List</p>
+        <p className="text-2xl mb-2 font-bold">{userName}'s Albums List</p>
         <>
           <DataTable columns={columns} data={albums} isLoading={loading} />
         </>

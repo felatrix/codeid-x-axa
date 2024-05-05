@@ -28,7 +28,6 @@ const PostDetail = ({ postDetailData }: PostDetailProps) => {
               <p>{postDetailData.body}</p>
               <div className='mt-2'>
               <ListComments postId={postDetailData.id}/>
-
               </div>
             </div>
           </DialogDescription>

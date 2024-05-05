@@ -27,20 +27,6 @@ interface ListCommentsProps {
   postId: number;
 }
 
-const CardItem = () => (
-  <Card>
-    <CardHeader>
-      <CardTitle>Card Title</CardTitle>
-      <CardDescription>Card Description</CardDescription>
-    </CardHeader>
-    <CardContent>
-      <p>Card Content</p>
-    </CardContent>
-    <CardFooter>
-      <p>Card Footer</p>
-    </CardFooter>
-  </Card>
-);
 const ListComments = ({ postId }: ListCommentsProps) => {
   const [comments, setSetComments] = useState<CommentInterface[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
