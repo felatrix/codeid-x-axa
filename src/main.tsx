@@ -5,6 +5,7 @@ import App from '@/pages/App';
 import Posts from '@/pages/Posts';
 import Albums from '@/pages/Albums';
 import './index.css';
+import { Toaster } from "@/components/ui/toaster"
 
 const router = createBrowserRouter([
   {
@@ -24,5 +25,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
       <RouterProvider router={router} />
+      <Toaster />
   </React.StrictMode>
 );

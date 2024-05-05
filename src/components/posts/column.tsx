@@ -1,6 +1,9 @@
 import { ColumnDef } from '@tanstack/react-table';
 import { PostInterface } from '@/types/api/post';
 import PostDetail from '../detail post/post-detail';
+import EditPost from './editPost';
+import DeletePost from './deletePost';
+
 
 export const columns: ColumnDef<PostInterface>[] = [
   {
@@ -21,6 +24,15 @@ export const columns: ColumnDef<PostInterface>[] = [
   },
   {
     id: 'actions',
-    cell: ({ row }) => <PostDetail postDetailData={row.original}/>,
+    cell: ({ row }) => <PostDetail postDetailData={row.original} />,
+  },
+  {
+    id: 'actions2',
+    cell: ({ row }) => (
+      <div className="flex flex-row gap-2">
+        <EditPost detailPostData={row.original} />
+        <DeletePost postId={row.original.id}/>
+      </div>
+    ),
   },
 ];

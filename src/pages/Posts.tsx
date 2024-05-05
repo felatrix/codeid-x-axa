@@ -5,14 +5,14 @@ import { columns } from '@/components/posts/column';
 import { PostInterface } from '@/types/api/post';
 import { debounce } from 'lodash';
 import { useLocation } from 'react-router';
-
+import AddPost from '@/components/posts/addPost';
 function Posts() {
   const [posts, setSetPosts] = useState<PostInterface[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const location = useLocation();
   const userId = location.pathname.split('/')[2];
-  const queryParameters = new URLSearchParams(window.location.search)
-  const userName = queryParameters.get("userName")
+  const queryParameters = new URLSearchParams(window.location.search);
+  const userName = queryParameters.get('userName');
   const fetchUsers = async () => {
     try {
       setLoading(true);
@@ -38,7 +38,10 @@ function Posts() {
   return (
     <>
       <div className="container">
-        <p className="text-2xl mb-2 font-bold">{userName}'s Posts</p>
+        <div className="flex flex-row justify-between my-2">
+          <p className="text-2xl mb-2 font-bold">{userName}'s Posts</p>
+          <AddPost />
+        </div>
         <>
           <DataTable columns={columns} data={posts} isLoading={loading} />
         </>
