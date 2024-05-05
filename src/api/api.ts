@@ -3,6 +3,7 @@ import { UserInterface } from '@/types/api/user';
 import { PostInterface } from '@/types/api/post';
 import { AlbumInterface } from '@/types/api/album';
 import { CommentInterface } from '@/types/api/comment';
+import { PhotoInterface } from '@/types/api/photo';
 class ApiClient {
     private baseUrl: string;
 
@@ -31,6 +32,15 @@ class ApiClient {
     async getUserAlbum(userId:number): Promise<any[]> {
         try {
             const response: AxiosResponse<AlbumInterface[]> = await axios.get(`${this.baseUrl}/albums?userId=${userId}`);
+            return response.data;
+        } catch (error) {
+            console.error('Error fetching users:', error);
+            throw error;
+        }
+    }
+    async getAlbumPhoto(albumId:number): Promise<any[]> {
+        try {
+            const response: AxiosResponse<PhotoInterface[]> = await axios.get(`${this.baseUrl}/photos?albumId=${albumId}`);
             return response.data;
         } catch (error) {
             console.error('Error fetching users:', error);
