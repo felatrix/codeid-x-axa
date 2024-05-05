@@ -11,10 +11,15 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@radix-ui/react-menubar": "^1.0.4",
+    "@radix-ui/react-navigation-menu": "^1.1.4",
     "@radix-ui/react-slot": "^1.0.2",
+    "@tanstack/react-table": "^8.16.0",
+    "axios": "^0.24.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "localforage": "^1.10.0",
+    "lodash": "^4.17.21",
     "lucide-react": "^0.378.0",
     "match-sorter": "^6.3.4",
     "react": "^18.2.0",
@@ -29,6 +34,7 @@
     "@testing-library/jest-dom": "^6.4.5",
     "@testing-library/react": "^15.0.6",
     "@types/jest": "^29.5.12",
+    "@types/lodash": "^4.17.1",
     "@types/node": "^20.12.8",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
