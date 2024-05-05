@@ -22,5 +22,5 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
-  "no-unused-vars": false
+  "no-unused-vars": "off"
 }
