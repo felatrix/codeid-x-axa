@@ -1,6 +1,6 @@
 import { ColumnDef } from '@tanstack/react-table';
 import { UserInterface } from '@/types/api/user';
-import { Button } from '../ui/button';
+
 import {
   Menubar,
   MenubarContent,
