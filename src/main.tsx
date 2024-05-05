@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from '@/pages/App';
 import Posts from '@/pages/Posts';
+import Albums from '@/pages/Albums';
 import './index.css';
 
 const router = createBrowserRouter([
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: '/users/:postId/posts/',
     element: <Posts />,
+  },
+  {
+    path: '/users/:postId/albums/',
+    element: <Albums />,
   }
 ]);
 // @ts-ignore
