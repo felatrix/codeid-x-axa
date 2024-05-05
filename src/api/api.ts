@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { UserInterface } from '@/types/api/user';
 import { PostInterface } from '@/types/api/post';
+import { AlbumInterface } from '@/types/api/album';
 class ApiClient {
     private baseUrl: string;
 
@@ -19,7 +20,16 @@ class ApiClient {
     }
     async getUserPosts(userId:number): Promise<any[]> {
         try {
-            const response: AxiosResponse<UserInterface[]> = await axios.get(`${this.baseUrl}/posts?userId=${userId}`);
+            const response: AxiosResponse<PostInterface[]> = await axios.get(`${this.baseUrl}/posts?userId=${userId}`);
+            return response.data;
+        } catch (error) {
+            console.error('Error fetching posts:', error);
+            throw error;
+        }
+    }
+    async getUserAlbum(userId:number): Promise<any[]> {
+        try {
+            const response: AxiosResponse<AlbumInterface[]> = await axios.get(`${this.baseUrl}/albums?userId=${userId}`);
             return response.data;
         } catch (error) {
             console.error('Error fetching users:', error);
