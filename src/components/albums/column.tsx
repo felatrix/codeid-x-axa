@@ -1,17 +1,17 @@
 import { ColumnDef } from '@tanstack/react-table';
-import { PostInterface } from '@/types/api/post';
+import { AlbumInterface } from '@/types/api/album';
 
-export const columns: ColumnDef<PostInterface>[] = [
+export const columns: ColumnDef<AlbumInterface>[] = [
   {
-    accessorKey: 'id',
+    accessorKey: 'userId',
     header: 'User Id',
   },
   {
-    accessorKey: 'title',
-    header: 'Title Post',
+    accessorKey: 'id',
+    header: 'Album Id',
   },
   {
-    accessorKey: 'body',
-    header: 'Content',
+    accessorKey: 'title',
+    header: 'Title',
   },
 ];

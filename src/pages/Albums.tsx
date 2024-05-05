@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { api } from '@/api/api';
-import { DataTable } from '@/components/posts/data-table';
-import { columns } from '@/components/posts/column';
+import { DataTable } from '@/components/albums/data-table';
+import { columns } from '@/components/albums/column';
 import { AlbumInterface } from '@/types/api/album';
 import { debounce } from 'lodash';
 import {useLocation} from 'react-router';
