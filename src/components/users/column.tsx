@@ -1,6 +1,6 @@
 import { ColumnDef } from '@tanstack/react-table';
 import { UserInterface } from '@/types/api/user';
-
+import { Link } from 'react-router-dom';
 import {
   Menubar,
   MenubarContent,
@@ -30,18 +30,38 @@ export const columns: ColumnDef<UserInterface>[] = [
   {
     id: 'actions',
     cell: ({ row }) => (
-        <Menubar>
-          <MenubarMenu>
-            <MenubarTrigger>Click Me</MenubarTrigger>
-            <MenubarContent>
-              <MenubarItem>User Detail</MenubarItem>
-              <MenubarSeparator />
-              <MenubarItem>User's Posts</MenubarItem>
-              <MenubarSeparator />
-              <MenubarItem>User's Album</MenubarItem>
-            </MenubarContent>
-          </MenubarMenu>
-        </Menubar>
+      <Menubar>
+        <MenubarMenu>
+          <MenubarTrigger>Click Me</MenubarTrigger>
+          <MenubarContent>
+            <MenubarItem>User Detail</MenubarItem>
+            <MenubarSeparator />
+            <MenubarItem>
+              <Link
+                to={{
+                  pathname: `/users/${row.original.id}/posts`,
+                  search: `userName=${row.original.username}`,
+                }}
+              >
+                {' '}
+                User's Posts
+              </Link>
+            </MenubarItem>
+            <MenubarSeparator />
+            <MenubarItem>
+              <Link
+                to={{
+                  pathname: `/users/${row.original.id}/albums`,
+                  search: `userName=${row.original.username}`,
+                }}
+              >
+                {' '}
+                User's Album
+              </Link>
+            </MenubarItem>
+          </MenubarContent>
+        </MenubarMenu>
+      </Menubar>
     ),
   },
 ];

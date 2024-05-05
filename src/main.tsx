@@ -18,11 +18,11 @@ const router = createBrowserRouter([
   {
     path: '/users/:postId/albums/',
     element: <Albums />,
-  }
+  },
 ]);
 // @ts-ignore
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
   </React.StrictMode>
 );

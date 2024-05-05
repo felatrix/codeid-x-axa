@@ -78,11 +78,11 @@ const PhotoList = ({ albumId, albumName }: PhotoListProps) => {
                   <div className="w-[85%] relative">
                     <img src={value.url} className="w-full aspect-square" />
                     <div className="absolute left-0 bottom-0 w-full bg-[#ffffff6e] p-2">
-                      <p>
+                      <p className='text-black'>
                         <span className="font-bold">Album Name :</span>{' '}
                         {albumName}
                       </p>
-                      <p>
+                      <p className='text-black'>
                         <span className="font-bold">Photo Title : </span>{' '}
                         {value.title}
                       </p>

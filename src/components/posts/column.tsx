@@ -4,7 +4,7 @@ import PostDetail from '../detail post/post-detail';
 
 export const columns: ColumnDef<PostInterface>[] = [
   {
-    accessorKey: 'User id',
+    accessorKey: 'userId',
     header: 'User Id',
   },
   {
